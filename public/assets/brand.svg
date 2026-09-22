@@ -1,0 +1,12 @@
+<svg width="168" height="40" viewBox="0 0 168 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">GameCove</title>
+  <desc id="desc">GameCove wave mark and wordmark</desc>
+  <defs>
+    <linearGradient id="mark" x1="3" y1="4" x2="34" y2="35" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2997FF"/><stop offset="1" stop-color="#0066CC"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#mark)" d="M20 3.5a16.5 16.5 0 1 0 16.5 16.7c0-2.8-.7-5.5-2-7.8.2 7.8-6 14.2-13.8 14.2-5.9 0-11-3.7-13-8.9a7.2 7.2 0 0 0 7 5.6c4 0 7.2-3.2 7.2-7.2 0-3.1-2-5.8-4.8-6.8a11 11 0 0 1 2.9-5.8Z"/>
+  <circle cx="28.5" cy="8" r="2.4" fill="#78C0FF"/>
+  <text x="44" y="27" fill="#86868B" font-family="-apple-system, BlinkMacSystemFont, SF Pro Display, Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="650" letter-spacing="-0.8">GameCove</text>
+</svg>
