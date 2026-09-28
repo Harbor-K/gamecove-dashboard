@@ -1,4 +1,6 @@
-# GameCove Dashboard
+# GameCove Dashboard test_1
+
+https://harbor-k.github.io/gamecove-dashboard/
 
 An Apple-inspired responsive analytics dashboard built with React and Vite.
 
