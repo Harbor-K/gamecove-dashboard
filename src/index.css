@@ -1,0 +1,440 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+/* Lato Medium (500) and SemiBold (600) are used by the GameCove designs but are not on Google Fonts.
+   Same Lato 2.0 files the repo ships (npm lato-font@3.0.0). 400/700 come from the Google import above. */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/lato-font@3.0.0/fonts/lato-medium/lato-medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/lato-font@3.0.0/fonts/lato-semibold/lato-semibold.woff2") format("woff2");
+}
+/* Layout values (not themed) */
+:root {
+  --gc-zoom: 0.9;
+  --gc-content-left: 280px;
+}
+/* Theme = <html data-theme="light | dark | system">. Opens on System every time (top bar ☾/☀ menu). */
+/* GC Semantic — Dark (from app/tokens.css; also the default) */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --gc-bg-canvas: #111114;
+  --gc-bg-surface: #17171b;
+  --gc-bg-subtle: #2a2d31;
+  --gc-bg-selected: #2a2d31;
+  --gc-text-primary: #f2f0ec;
+  --gc-text-secondary: #a7a9b0;
+  --gc-text-accent: #b3d1ff;
+  --gc-border-default: #2a2d31;
+  --gc-border-accent: #b3d1ff;
+  --gc-icon-primary: #f2f0ec;
+  --gc-icon-secondary: #a7a9b0;
+  --gc-chart-series-primary: #3898f8;
+  --gc-chart-series-muted: #a7a9b0;
+  --gc-avatar-violet: #72578e;
+  --gc-bg-hover: #4b5057;
+  --gc-status-positive: #2f8f68;
+  --gc-status-critical: #c95d5d;
+  --gc-chart-series-exit: #ef7085;
+  --gc-chart-context-secondary: #87919f;
+  --gc-chart-context-track: #242a32;
+  --gc-bg-nav: #0e0e10;
+  --gc-bg-bubble: #3898f880;
+  --gc-bg-scrim: #00000099;
+  --gc-bg-critical-hover: #c95d5d29;
+  --gc-bg-hover-subtle: #4b505740;
+  --gc-bg-positive-subtle: #2f8f6824;
+  --gc-bg-critical-subtle: #c95d5d24;
+  --gc-border-positive-subtle: #2f8f6866;
+  --gc-border-critical-subtle: #c95d5d66;
+  --gc-bg-pending-subtle: #d9a64c24;
+  --gc-border-pending-subtle: #d9a64c66;
+  --gc-data-select-row: #f2f0ec14;
+  --gc-text-positive: #84d48e;
+  --gc-chart-label: #666970;
+  --gc-chart-grid: #1d1f22;
+  --gc-text-critical: #e28b8b;
+  --gc-chart-bar-default: #404752;
+  --gc-chart-bar-track: #1c1c21;
+  --gc-chart-bar-accent: #3898f8;
+  --gc-chart-bar-emphasis: #b3d1ff;
+  --gc-status-pending: #d9a64c;
+  --gc-icon-ai: #b3d1ff;
+  --gc-chart-heatmap-accent: #3898f8;
+  --gc-chart-heatmap-emphasis: #b3d1ff;
+  --gc-bg-ai-subtle: #b3d1ff0d;
+  --gc-bg-accent-strong: #3898f880;
+  --gc-text-on-accent: #f2f0ec;
+  --gc-icon-inverse: #111114;
+  --gc-bg-chip: #2a2d31;
+  --gc-bg-button-secondary: #00000000;
+  --gc-border-button-secondary: #2a2d31;
+  --gc-chart-funnel-dropped: #404752;
+  --gc-chart-funnel-dropped-stripe: #b3d1ff;
+  --gc-text-button-secondary: #a7a9b0;
+  --gc-icon-button-secondary: #a7a9b0;
+  --gc-bg-button-primary: #f2f0ec;
+  --gc-text-on-button-primary: #111114;
+  --gc-bg-tracking-canvas: #111114;
+  --gc-bg-node-inset: #111114;
+  --gc-bg-node-status-tracked: #2f8f6824;
+  --gc-bg-node-status-idle: #111114;
+  --gc-effect-node-glow: #2f8f6847;
+  --gc-control-knob: #f2f0ec;
+  --gc-bg-tooltip: #f2f0ec;
+  --gc-text-tooltip: #111114;
+  --gc-border-tooltip: #f2f0ec00;
+  --gc-chart-area-primary-0: #4478f061;
+  --gc-chart-area-primary-1: #4478f036;
+  --gc-chart-area-primary-2: #4478f014;
+  --gc-chart-area-primary-3: #4478f000;
+  --gc-chart-area-primary-4: #4478f000;
+  --gc-border-node-0: #ffffff47;
+  --gc-border-node-1: #ffffff24;
+  --gc-border-node-2: #ffffff14;
+  --gc-effect-selected-ring: #3899f71a;
+  --gc-chart-area-muted-0: #8a8c9461;
+  --gc-chart-area-muted-1: #8a8c9436;
+  --gc-chart-area-muted-2: #8a8c9414;
+  --gc-chart-area-muted-3: #8a8c9400;
+  --gc-chart-area-muted-4: #8a8c9400;
+  --gc-bg-node-status-critical: #c95d5d24;
+  --gc-bg-node-status-pending: #d9a64c24;
+  --gc-effect-node-glow-critical: #c95d5d47;
+  --gc-effect-node-glow-pending: #d9a64c47;
+  --gc-border-node-status-positive: #ffffff14;
+  --gc-border-node-status-critical: #ffffff14;
+  --gc-border-node-status-pending: #ffffff14;
+  --gc-border-node-divider-critical: #c95d5d66;
+  --gc-border-node-divider-pending: #d9a64c66;
+  --gc-border-node-divider-positive: #2f8f6866;
+  --gc-border-node-divider-tracked: #2a2d31;
+  --gc-chart-flow-line: #666970;
+  --gc-effect-shadow: #0000001a;
+  --gc-effect-shadow-lifted: #00000033;
+  --gc-logo-wordmark: #f2f0ec;
+}
+/* GC Semantic — Light */
+[data-theme="light"] {
+  color-scheme: light;
+  --gc-logo-wordmark: #0e0e10;
+  --gc-bg-canvas: #ffffff;
+  --gc-bg-surface: #ffffff;
+  --gc-bg-subtle: #d5dbe4;
+  --gc-bg-selected: #f4f4f4;
+  --gc-text-primary: #111114;
+  --gc-text-secondary: #6b7280;
+  --gc-text-accent: #0066d6;
+  --gc-border-default: #d5dbe4;
+  --gc-border-accent: #007dfa;
+  --gc-icon-primary: #111114;
+  --gc-icon-secondary: #6b7280;
+  --gc-chart-series-primary: #007dfa;
+  --gc-chart-series-muted: #6b7280;
+  --gc-avatar-violet: #72578e;
+  --gc-bg-hover: #e6ecf4;
+  --gc-status-positive: #22a55b;
+  --gc-status-critical: #dc2626;
+  --gc-chart-series-exit: #dc2626;
+  --gc-chart-context-secondary: #a1a4a7;
+  --gc-chart-context-track: #f1f3f6;
+  --gc-bg-nav: #ffffff;
+  --gc-bg-bubble: #f4f4f4;
+  --gc-bg-scrim: #0b122066;
+  --gc-bg-critical-hover: #c95d5d29;
+  --gc-bg-hover-subtle: #0b12200a;
+  --gc-bg-positive-subtle: #2f8f6824;
+  --gc-bg-critical-subtle: #c95d5d24;
+  --gc-border-positive-subtle: #2f8f6866;
+  --gc-border-critical-subtle: #c95d5d66;
+  --gc-bg-pending-subtle: #d9a64c24;
+  --gc-border-pending-subtle: #d9a64c66;
+  --gc-data-select-row: #f4f4f4;
+  --gc-text-positive: #22a55b;
+  --gc-chart-label: #a1a4a7;
+  --gc-chart-grid: #e5e6e8;
+  --gc-text-critical: #dc2626;
+  --gc-chart-bar-default: #c4c7cd;
+  --gc-chart-bar-track: #f1f3f6;
+  --gc-chart-bar-accent: #007dfa;
+  --gc-chart-bar-emphasis: #bcd8ff;
+  --gc-status-pending: #ff9c0d;
+  --gc-icon-ai: #007dfa;
+  --gc-chart-heatmap-accent: #007dfa;
+  --gc-chart-heatmap-emphasis: #bcd8ff;
+  --gc-bg-ai-subtle: #eaf5ff;
+  --gc-bg-accent-strong: #007dfa1f;
+  --gc-text-on-accent: #111114;
+  --gc-icon-inverse: #ffffff;
+  --gc-bg-chip: #e5e6e8;
+  --gc-bg-button-secondary: #f4f4f4;
+  --gc-border-button-secondary: #d5dbe400;
+  --gc-chart-funnel-dropped: #c4c7cd;
+  --gc-chart-funnel-dropped-stripe: #007dfa80;
+  --gc-text-button-secondary: #111114;
+  --gc-icon-button-secondary: #111114;
+  --gc-bg-button-primary: #007dfa;
+  --gc-text-on-button-primary: #ffffff;
+  --gc-bg-tracking-canvas: #f9f9f9;
+  --gc-bg-node-inset: #f9f9f9;
+  --gc-bg-node-status-tracked: #2f8f680f;
+  --gc-bg-node-status-idle: #1111140a;
+  --gc-effect-node-glow: #2f8f6800;
+  --gc-control-knob: #ffffff;
+  --gc-bg-tooltip: #ffffff;
+  --gc-text-tooltip: #111114;
+  --gc-border-tooltip: #007dfa;
+  --gc-chart-area-primary-0: #4478f0d4;
+  --gc-chart-area-primary-1: #4478f05c;
+  --gc-chart-area-primary-2: #4478f029;
+  --gc-chart-area-primary-3: #4478f00d;
+  --gc-chart-area-primary-4: #4478f000;
+  --gc-border-node-0: #d5dbe4;
+  --gc-border-node-1: #d5dbe4;
+  --gc-border-node-2: #d5dbe4;
+  --gc-effect-selected-ring: #007dfa1f;
+  --gc-chart-area-muted-0: #a1a4a7d4;
+  --gc-chart-area-muted-1: #a1a4a75c;
+  --gc-chart-area-muted-2: #a1a4a729;
+  --gc-chart-area-muted-3: #a1a4a70d;
+  --gc-chart-area-muted-4: #a1a4a700;
+  --gc-bg-node-status-critical: #c95d5d0f;
+  --gc-bg-node-status-pending: #d9a64c0f;
+  --gc-effect-node-glow-critical: #c95d5d00;
+  --gc-effect-node-glow-pending: #d9a64c00;
+  --gc-border-node-status-positive: #a1cbba;
+  --gc-border-node-status-critical: #e4b5b5;
+  --gc-border-node-status-pending: #ebd5ae;
+  --gc-border-node-divider-critical: #e4b5b5;
+  --gc-border-node-divider-pending: #ebd5ae;
+  --gc-border-node-divider-positive: #a1cbba;
+  --gc-border-node-divider-tracked: #a1cbba;
+  --gc-chart-flow-line: #a1a4a7;
+  --gc-effect-shadow: #0000001a;
+  --gc-effect-shadow-lifted: #00000033;
+}
+/* System: follows the OS setting (overrides only when the OS is Light). */
+@media (prefers-color-scheme: light) {
+  [data-theme="system"] {
+    color-scheme: light;
+    --gc-logo-wordmark: #0e0e10;
+    --gc-bg-canvas: #ffffff;
+    --gc-bg-surface: #ffffff;
+    --gc-bg-subtle: #d5dbe4;
+    --gc-bg-selected: #f4f4f4;
+    --gc-text-primary: #111114;
+    --gc-text-secondary: #6b7280;
+    --gc-text-accent: #0066d6;
+    --gc-border-default: #d5dbe4;
+    --gc-border-accent: #007dfa;
+    --gc-icon-primary: #111114;
+    --gc-icon-secondary: #6b7280;
+    --gc-chart-series-primary: #007dfa;
+    --gc-chart-series-muted: #6b7280;
+    --gc-avatar-violet: #72578e;
+    --gc-bg-hover: #e6ecf4;
+    --gc-status-positive: #22a55b;
+    --gc-status-critical: #dc2626;
+    --gc-chart-series-exit: #dc2626;
+    --gc-chart-context-secondary: #a1a4a7;
+    --gc-chart-context-track: #f1f3f6;
+    --gc-bg-nav: #ffffff;
+    --gc-bg-bubble: #f4f4f4;
+    --gc-bg-scrim: #0b122066;
+    --gc-bg-critical-hover: #c95d5d29;
+    --gc-bg-hover-subtle: #0b12200a;
+    --gc-bg-positive-subtle: #2f8f6824;
+    --gc-bg-critical-subtle: #c95d5d24;
+    --gc-border-positive-subtle: #2f8f6866;
+    --gc-border-critical-subtle: #c95d5d66;
+    --gc-bg-pending-subtle: #d9a64c24;
+    --gc-border-pending-subtle: #d9a64c66;
+    --gc-data-select-row: #f4f4f4;
+    --gc-text-positive: #22a55b;
+    --gc-chart-label: #a1a4a7;
+    --gc-chart-grid: #e5e6e8;
+    --gc-text-critical: #dc2626;
+    --gc-chart-bar-default: #c4c7cd;
+    --gc-chart-bar-track: #f1f3f6;
+    --gc-chart-bar-accent: #007dfa;
+    --gc-chart-bar-emphasis: #bcd8ff;
+    --gc-status-pending: #ff9c0d;
+    --gc-icon-ai: #007dfa;
+    --gc-chart-heatmap-accent: #007dfa;
+    --gc-chart-heatmap-emphasis: #bcd8ff;
+    --gc-bg-ai-subtle: #eaf5ff;
+    --gc-bg-accent-strong: #007dfa1f;
+    --gc-text-on-accent: #111114;
+    --gc-icon-inverse: #ffffff;
+    --gc-bg-chip: #e5e6e8;
+    --gc-bg-button-secondary: #f4f4f4;
+    --gc-border-button-secondary: #d5dbe400;
+    --gc-chart-funnel-dropped: #c4c7cd;
+    --gc-chart-funnel-dropped-stripe: #007dfa80;
+    --gc-text-button-secondary: #111114;
+    --gc-icon-button-secondary: #111114;
+    --gc-bg-button-primary: #007dfa;
+    --gc-text-on-button-primary: #ffffff;
+    --gc-bg-tracking-canvas: #f9f9f9;
+    --gc-bg-node-inset: #f9f9f9;
+    --gc-bg-node-status-tracked: #2f8f680f;
+    --gc-bg-node-status-idle: #1111140a;
+    --gc-effect-node-glow: #2f8f6800;
+    --gc-control-knob: #ffffff;
+    --gc-bg-tooltip: #ffffff;
+    --gc-text-tooltip: #111114;
+    --gc-border-tooltip: #007dfa;
+    --gc-chart-area-primary-0: #4478f0d4;
+    --gc-chart-area-primary-1: #4478f05c;
+    --gc-chart-area-primary-2: #4478f029;
+    --gc-chart-area-primary-3: #4478f00d;
+    --gc-chart-area-primary-4: #4478f000;
+    --gc-border-node-0: #d5dbe4;
+    --gc-border-node-1: #d5dbe4;
+    --gc-border-node-2: #d5dbe4;
+    --gc-effect-selected-ring: #007dfa1f;
+    --gc-chart-area-muted-0: #a1a4a7d4;
+    --gc-chart-area-muted-1: #a1a4a75c;
+    --gc-chart-area-muted-2: #a1a4a729;
+    --gc-chart-area-muted-3: #a1a4a70d;
+    --gc-chart-area-muted-4: #a1a4a700;
+    --gc-bg-node-status-critical: #c95d5d0f;
+    --gc-bg-node-status-pending: #d9a64c0f;
+    --gc-effect-node-glow-critical: #c95d5d00;
+    --gc-effect-node-glow-pending: #d9a64c00;
+    --gc-border-node-status-positive: #a1cbba;
+    --gc-border-node-status-critical: #e4b5b5;
+    --gc-border-node-status-pending: #ebd5ae;
+    --gc-border-node-divider-critical: #e4b5b5;
+    --gc-border-node-divider-pending: #ebd5ae;
+    --gc-border-node-divider-positive: #a1cbba;
+    --gc-border-node-divider-tracked: #a1cbba;
+    --gc-chart-flow-line: #a1a4a7;
+    --gc-effect-shadow: #0000001a;
+    --gc-effect-shadow-lifted: #00000033;
+  }
+}
+/* Logo wordmark follows the theme (repo ships logo_dark.svg / logo_light.svg; the inline logo recolours instead). */
+svg[viewBox="0 0 149 40"] path[fill="#F2F0EC"] {
+  fill: var(--gc-logo-wordmark);
+}
+/* Whole-screen scale, same as the live site (globals.css) */
+html {
+  zoom: var(--gc-zoom);
+}
+body {
+  background: var(--gc-bg-canvas);
+  color: var(--gc-text-primary);
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+/* Korean (?lang=ko) uses Pretendard, same as the GameCove repo. */
+html[lang="ko"] body {
+  font-family: 'Pretendard', 'Lato', sans-serif;
+}
+:focus-visible {
+  outline: 1px solid var(--gc-border-accent);
+  outline-offset: 2px;
+}
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none;
+}
+@keyframes gc-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes gc-pop-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes gc-rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes gc-hint-in {
+  0% { opacity: 0; transform: translateY(-6px) scale(0.96); }
+  60% { opacity: 1; transform: translateY(2px) scale(1.02); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes gc-drawer-in {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+@keyframes gc-light-up {
+  0% { filter: brightness(0.6); opacity: 0.6; }
+  35% { filter: brightness(1.6); opacity: 1; }
+  100% { filter: none; opacity: 1; }
+}
+@keyframes gc-spin {
+  to { transform: rotate(360deg); }
+}
+@layer utilities {
+  .hover-layer {
+    position: relative;
+    cursor: pointer;
+  }
+  .hover-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--gc-bg-hover-subtle);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .hover-layer:hover::after {
+    opacity: 1;
+  }
+  .hover-layer:disabled::after {
+    display: none;
+  }
+  .icon-hit {
+    position: relative;
+    isolation: isolate;
+    cursor: pointer;
+  }
+  .icon-hit::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    z-index: -1;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+  .icon-hit:hover::before {
+    background: var(--gc-bg-hover);
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}
