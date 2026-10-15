@@ -287,7 +287,7 @@ export const KO: Record<string, string> = {
   "Send": "보내기",
   "Or start with": "또는 다음으로 시작",
   "Add chart": "차트 추가",
-  "Ask COVY": "COVY에게 묻기",
+  "Ask AI Agent": "AI 에이전트에게 묻기",
   "Breadcrumb": "현재 위치",
   "Expand": "넓게 보기",
   "Collapse": "좁게 보기",

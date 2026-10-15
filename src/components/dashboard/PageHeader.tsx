@@ -39,7 +39,7 @@ export function PageHeader({ title, description, actions = true, extraItems = []
             trigger={<OptionIcon />}
             width={256}
             items={[
-              { label: L("Ask COVY to summarize this page", "COVY에게 이 페이지 요약 요청"), onSelect: () => agent.ask(L(`Summarize the ${title} page`, `${title} 페이지를 요약해 줘`)) },
+              { label: L("Ask AI Agent to summarize this page", "AI 에이전트에게 이 페이지 요약 요청"), onSelect: () => agent.ask(L(`Summarize the ${title} page`, `${title} 페이지를 요약해 줘`)) },
               { label: L("Copy page link", "페이지 링크 복사"), doneLabel: L("Link copied", "링크를 복사했어요"), onSelect: () => copyText(window.location.href) },
               ...extraItems,
             ]}

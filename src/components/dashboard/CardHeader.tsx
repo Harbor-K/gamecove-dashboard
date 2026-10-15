@@ -60,7 +60,7 @@ export function CardActions({ title, onExplore }: { title?: string; onExplore?: 
         items={[
           ...(showExplore && onExplore ? [{ label: L("Open in Explore", "Explore에서 열기"), onSelect: onExplore }] : []),
           {
-            label: L("Ask COVY about this card", "이 카드에 대해 COVY에게 묻기"),
+            label: L("Ask AI Agent about this card", "이 카드에 대해 AI 에이전트에게 묻기"),
             onSelect: () => agent.ask(title ? L(`Explain the “${title}” card`, `“${title}” 카드를 설명해 줘`) : L("Explain this card", "이 카드를 설명해 줘")),
           },
           { label: L("Copy link", "링크 복사"), doneLabel: L("Link copied", "링크를 복사했어요"), onSelect: () => copyText(window.location.href) },
