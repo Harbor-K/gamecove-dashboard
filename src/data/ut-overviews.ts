@@ -56,7 +56,7 @@ export const ov1 = {
       related: [
         { label: L("Session flow from Lobby", "로비 이후 세션 흐름"), to: { kind: "explore", query: "metric=sessionFlow&selection=lobby" } },
         { label: L("Break down by traffic source", "유입 경로별로 보기"), to: { kind: "explore", query: "metric=newAndReturning" } },
-        { label: L("Ask COVY why players leave the lobby", "COVY에게 로비 이탈 이유 묻기"), to: { kind: "ask", question: L("Why do new players leave the lobby before starting a stage?", "신규 플레이어는 왜 스테이지를 시작하기 전에 로비에서 나가나요?") } },
+        { label: L("Ask AI Agent why players leave the lobby", "AI 에이전트에게 로비 이탈 이유 묻기"), to: { kind: "ask", question: L("Why do new players leave the lobby before starting a stage?", "신규 플레이어는 왜 스테이지를 시작하기 전에 로비에서 나가나요?") } },
       ] as Related[],
     },
     stages: {
@@ -89,7 +89,7 @@ export const ov1 = {
       related: [
         { label: L("Stage 4 in Explore", "Explore에서 스테이지 4 보기"), to: { kind: "explore", query: "q=stage-4" } },
         { label: L("Session flow from Stage 4", "스테이지 4 이후 세션 흐름"), to: { kind: "explore", query: "metric=sessionFlow&selection=stage_4" } },
-        { label: L("Ask COVY what happens at star 5", "COVY에게 별 5개 지점에서 무슨 일이 있는지 묻기"), to: { kind: "ask", question: L("What happens to Stage 4 players at star 5?", "스테이지 4에서 별 5개 지점에 무슨 일이 있나요?") } },
+        { label: L("Ask AI Agent what happens at star 5", "AI 에이전트에게 별 5개 지점에서 무슨 일이 있는지 묻기"), to: { kind: "ask", question: L("What happens to Stage 4 players at star 5?", "스테이지 4에서 별 5개 지점에 무슨 일이 있나요?") } },
       ] as Related[],
     },
     sessions: {
@@ -105,7 +105,7 @@ export const ov1 = {
       related: [
         { label: L("Only sessions that quit at 5 stars", "별 5개에서 그만둔 세션만"), to: { kind: "explore", query: "q=stage-4" } },
         { label: L("Player history (P0067)", "플레이어 기록 (P0067)"), to: { kind: "ask", question: L("Show me player P0067's history", "플레이어 P0067의 기록을 보여줘") } },
-        { label: L("Ask COVY to summarize these sessions", "COVY에게 이 세션들 요약 요청"), to: { kind: "ask", question: L("Summarize the recent sessions that ended in Stage 4", "스테이지 4에서 끝난 최근 세션을 요약해 줘") } },
+        { label: L("Ask AI Agent to summarize these sessions", "AI 에이전트에게 이 세션들 요약 요청"), to: { kind: "ask", question: L("Summarize the recent sessions that ended in Stage 4", "스테이지 4에서 끝난 최근 세션을 요약해 줘") } },
       ] as Related[],
     },
     comingBack: {
