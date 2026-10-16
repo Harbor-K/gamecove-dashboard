@@ -199,7 +199,9 @@ export function TrackingPage() {
     );
   }
 
-  if (tracked) {
+  // "Your game is mapped!" sits on the new design too: behind the modal is the saved map in the same Tracking
+  // workspace the developer lands on after closing it (no flash of the old node canvas).
+  if (tracked || phase === "mapped") {
     return (
       <div className="relative h-[calc(100vh/var(--gc-zoom)-56px)] w-full overflow-hidden">
         <TrackingWorkspace
@@ -211,6 +213,16 @@ export function TrackingPage() {
           initialTab={s.initialTab}
           onOpenDashboard={toOverview}
         />
+        {phase === "mapped" && (
+          <GameMappedModal
+            open={s.mappedOpen}
+            onClose={s.toIdle}
+            onGoToDashboard={() => {
+              s.toIdle();
+              toOverview();
+            }}
+          />
+        )}
       </div>
     );
   }
